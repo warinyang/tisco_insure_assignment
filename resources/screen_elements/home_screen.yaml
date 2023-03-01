@@ -1,0 +1,3 @@
+navbar:  //*[@id="insure"]/body/div[1]/app-root/app-pages/app-header/div[1]/div/nav
+nav_link: //ul[@class="uk-navbar-nav ng-star-inserted"]/li//a[text()='$NAME']
+cookie_button: //*[@id="insure"]/body/div/app-root/app-modal-permission/div[1]/div/div/div[2]/button[2]

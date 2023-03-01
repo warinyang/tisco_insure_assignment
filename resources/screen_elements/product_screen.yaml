@@ -1,0 +1,2 @@
+cards: //div[@class="uk-card uk-card-default uk-border-rounded uk-text-center"]
+card_button: //h3[text()='$NAME']/../../div/a

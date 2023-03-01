@@ -1,0 +1,108 @@
+accept_button: //*[@id='insure']/body/div[2]/div/div[2]/div[3]/button
+
+submit_first_step: //button[text()='ค้นหาเเบบประกันที่ใช่']
+submit_second_step: //button[text()=' ขั้นตอนต่อไป ']
+submit_third_step: //*[@id="show-detail-insure"]/button
+submit_third_step_2: //button[ not(contains(@class, 'uk-disabled')) and text()='ขั้นตอนต่อไป'  ]
+submit_third_step_3: //button[text()=' ขั้นตอนถัดไป ']
+
+
+# form first step
+gender_is:
+  man: //input[@value='1' and @name='gender']
+  women: //input[@value='2' and @name='gender']
+insured_for:
+  myself: //input[@value='0' and @name='insuredFor']
+  the_other: //input[@value='1' and @name='insuredFor']
+date:
+  day : //*[@id='date']
+  month: //*[@name='birthDate[1]']
+  year: //*[@name='birthDate[2]']
+has:
+  been_cancer: //*[@name='question' and @value='Y']
+  never_been_cancer: //*[@name='question' and @value='N']
+
+# form second step
+plan:
+  one: //h3[text()=' แผน 1 ']/../../div[contains(@class,'footer')]/input
+  two: //h3[text()=' แผน 2 ']/../../div[contains(@class,'footer')]/input
+  three: //h3[text()=' แผน 3 ']/../../div[contains(@class,'footer')]/input
+  four: //h3[text()=' แผน 4 ']/../../div[contains(@class,'footer')]/input
+
+# form third step
+information: 
+  title_name: //select[@name='titleName']
+  first_name: //input[@id='first-name']
+  last_name: //input[@id='last-name']
+  height: //input[@id='user-height']
+  weight: //input[@id='user-weight']
+  nationality: //select[@name='nationality']
+  id_cards: //input[@name='idCard']
+  mobile: //input[@name='mobile']
+  email: //*[@id='mail-leads']
+  occupation: //select[@id='occupation']
+  job_desc: //select[@id='job-desc']
+  maritalStatus:
+    married: //*[text()=' สมรส ']/input
+    married_2: //*[text()=' สมรส (ไม่จดทะเบียน) ']/input
+    divorce: //*[text()=' หย่า ']/input
+    single: //*[text()=' โสด ']/input
+    
+health_questions:
+  question_one:
+    'no': >-
+      //p[text()='ปัจจุบันท่านมีการประกันภัยที่ให้ความคุ้มครองโรคมะเร็งไว้กับบริษัทประกันภัยหรือไม่']/../ul/li[1]/label/input
+    'yes': >-
+      //p[text()='ปัจจุบันท่านมีการประกันภัยที่ให้ความคุ้มครองโรคมะเร็งไว้กับบริษัทประกันภัยหรือไม่']/../ul/li[2]/label/input
+  question_two:
+    'no': >-
+      //p[text()='บิดา มารดา พี่หรือน้องของผู้ขอเอาประกันภัย
+      เคยเป็นหรือเสียชีวิตเนื่องจากโรคมะเร็งหรือไม่
+      โปรดระบุบุคคลที่เคยเป็นและโรคมะเร็งที่ได้รับการวินิจฉัย']/../ul/li[1]/label/input
+    'yes': >-
+      //p[text()='บิดา มารดา พี่หรือน้องของผู้ขอเอาประกันภัย
+      เคยเป็นหรือเสียชีวิตเนื่องจากโรคมะเร็งหรือไม่
+      โปรดระบุบุคคลที่เคยเป็นและโรคมะเร็งที่ได้รับการวินิจฉัย']/../ul/li[2]/label/input
+  question_three:
+    daily: >-
+      //p[text()='ท่านดื่มเครื่องดื่มที่มีแอลกอฮอล์หรือไม่']/../ul/li[1]/label/input
+    weekly: >-
+      //p[text()='ท่านดื่มเครื่องดื่มที่มีแอลกอฮอล์หรือไม่']/../ul/li[2]/label/input
+    have_chance: >-
+      //p[text()='ท่านดื่มเครื่องดื่มที่มีแอลกอฮอล์หรือไม่']/../ul/li[3]/label/input
+    never: >-
+      //p[text()='ท่านดื่มเครื่องดื่มที่มีแอลกอฮอล์หรือไม่']/../ul/li[4]/label/input
+  question_four:
+    never: '//p[text()=''ท่านสูบบุหรี่หรือไม่'']/../ul/li[1]/label/input'
+    ten: '//p[text()=''ท่านสูบบุหรี่หรือไม่'']/../ul/li[2]/label/input'
+    twenty: '//p[text()=''ท่านสูบบุหรี่หรือไม่'']/../ul/li[2]/label/input'
+    moret_wenty: '//p[text()=''ท่านสูบบุหรี่หรือไม่'']/../ul/li[2]/label/input'
+  question_five:
+    'no': '//p[contains(text(),''ท่านเคยเป็น'')]/../ul/li[1]/label/input'
+    'yes': '//p[contains(text(),''ท่านเคยเป็น'')]/../ul/li[2]/label/input'
+  question_six:
+    'no': '//p[contains(text(),''ระยะเวลา 5 ปี'')]/../ul/li[1]/label/input'
+    'yes': '//p[contains(text(),''ระยะเวลา 5 ปี'')]/../ul/li[2]/label/input'
+
+
+detail_for_ask_insure_title: //h3[text()='รายละเอียดการขอเอาประกันภัย']
+detail_for_ask_insure:
+  address: //input[@id='currentNumber']
+  district: //input[@placeholder='ตำบล / แขวง']
+  suggession_dropdown_dist: //*[@id="suggestions"]/ul/li/div/a
+  # suggession_response: //div[@class="ng-star-inserted"][1]
+  sub_district: //input[@placeholder='อำเภอ / เขต']
+  province: //input[@placeholder='จังหวัด']
+  code: //input[@placeholder='รหัสไปรษณีย์']
+  beneficiary:
+    legal_heir: //label[text()='ทายาทตามกฎหมาย ']/input
+    other: //label[text()='อื่นๆ ']/input
+  send:
+    no_from_post_office: //*[@id="insure"]/body/div[1]/app-root/app-pages/main/app-buy-insurance/section/aw-wizard/div/aw-wizard-step[2]/div/app-step-second-input-form/div/form[2]/section/div[3]/div[2]/ul/li[1]/label/input
+    current_address: //*[@id="insure"]/body/div[1]/app-root/app-pages/main/app-buy-insurance/section/aw-wizard/div/aw-wizard-step[2]/div/app-step-second-input-form/div/form[2]/section/div[3]/div[2]/ul/li[2]/label/input
+    other_address: //*[@id="insure"]/body/div[1]/app-root/app-pages/main/app-buy-insurance/section/aw-wizard/div/aw-wizard-step[2]/div/app-step-second-input-form/div/form[2]/section/div[3]/div[2]/ul/li[3]/label/input
+  tex:
+    accepted: //*[@id="insure"]/body/div[1]/app-root/app-pages/main/app-buy-insurance/section/aw-wizard/div/aw-wizard-step[2]/div/app-step-second-input-form/div/form[2]/section/div[4]/div[2]/ul/li[1]/label/input
+    decline: //*[@id="insure"]/body/div[1]/app-root/app-pages/main/app-buy-insurance/section/aw-wizard/div/aw-wizard-step[2]/div/app-step-second-input-form/div/form[2]/section/div[4]/div[2]/ul/li[2]/label/input
+
+veriy_screen_title: //*[@id="insure"]/body/div[1]/app-root/app-pages/main/app-buy-insurance/section/aw-wizard/div/aw-wizard-step[3]/div/app-step-third-review/div[1]/form/section[1]/h3
